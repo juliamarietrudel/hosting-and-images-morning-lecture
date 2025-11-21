@@ -2,6 +2,11 @@
 
 <%= render @article %>
 
+<ul>
+<% @article.photos.each do |photo| %>
+  <li><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></li>
+<% end %>
+</ul>
 <div>
   <%= link_to "Edit this article", edit_article_path(@article) %> |
   <%= link_to "Back to articles", articles_path %>
